@@ -2,7 +2,7 @@
 This section describes how to use asynchronous table web library API and functionality.
 
 ## XML source root
-In order to read xml data is should have 4 levels. 
+In order to read the xml data it should be arranged in 4 levels. 
 
 1. Root
 2. Table
@@ -46,7 +46,7 @@ function tabledata(xml) {
     	// User defined functions to be activated on certain events : 
 	// oncheck , onuncheck and onclickrow 
 	var userfnlist = {
-		oncheck : 'checkmain',
+		oncheck : 'null',
 		onuncheck : 'null',
 		onclickrow : 'null',
 		rankcol : ''
@@ -57,6 +57,9 @@ function tabledata(xml) {
 	console.dirxml(tabledata);
 	var mapping = null;
 
+	// The first occurance of date represents the label.
+	// The second  occurance of date represents the xml element.
+	
 	mapping = [
 			[
 				'date',
