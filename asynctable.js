@@ -441,7 +441,7 @@ form of electronic retrieval system.
 						rdbchk = type.indexOf("radio");
 						hdchk = type.indexOf("covered");
 						imgchk = type.indexOf("image");
-						vidchk = type.indexOf("image");
+						vidchk = type.indexOf("video");
 						formchk = type.indexOf("form");
 
 						// Ignore checkboxes or radio buttons
@@ -485,7 +485,7 @@ form of electronic retrieval system.
 						hdchk = type.indexOf("covered");
 						imgchk = type.indexOf("image");
 						formchk = type.indexOf("form");
-						vidchk = type.indexOf("image");
+						vidchk = type.indexOf("video");
 
 						// use different idindx here
 						if (idchk > -1) {
@@ -707,7 +707,7 @@ form of electronic retrieval system.
 									
 									ctx.drawImage(img, 0, 0);
 								};
-							} else {
+							}  else {
 								
 								
 								//$("#debug").append("not base64 path\n\n");
@@ -743,6 +743,29 @@ form of electronic retrieval system.
 							
 							newCell.appendChild(img);
 
+						} else if (vidchk > -1) {
+
+							var vid = document.createElement("video");
+	
+
+							vid.name = tblcolname;
+							vid.id = "vid" + tblcolname;
+							vid.setAttribute("alt", tblcolname);
+							//img.setAttribute("src", image);
+							vid.src = video;
+							
+							/*$("#debug").append("IMG called\n");
+							
+							if (vid.complete || vid.readyState === 4) {
+							    // image is cached
+								$("#debug").append("vid is cached\n");
+							}
+							else {
+								$("#debug").append("vid is not cached\n");
+							}*/
+							
+							newCell.appendChild(vid);
+							
 						} else if (formchk > -1) {
 							//Form place holder
 							// Either a. set ace here b. set ace after aynctable call using a deduced id
