@@ -1,4 +1,4 @@
-/* This website and its content is copyright of Web and Server Solution - © Web and Server Solution 2012. All rights reserved.
+/* This website and its content is copyright of Web and Server Solution - Â© Web and Server Solution 2012. All rights reserved.
 Any redistribution or reproduction of part or all of the contents in any form is prohibited.
 You may not, except with our express written permission, distribute or commercially exploit 
 the content. Nor may you transmit it or store it in any other website or other 
@@ -25,6 +25,7 @@ form of electronic retrieval system.
 		var idchk = -1;
 		var hdchk = -1;
 		var imgchk = -1;
+		var vidchk = -1;
 		var idindx = -1;
 		var idindx2 = -1;
 		var formchk = -1;
@@ -55,7 +56,9 @@ form of electronic retrieval system.
 		var userfnlst = null;
 		var isUserFn = false;
 		var imgconfig = null;
+		var vidconfig = null;
 		var image = null;
+		var video = null;
 		var columnCount = 0;
 
 		var headCell = null;
@@ -250,7 +253,6 @@ form of electronic retrieval system.
 
 		var labelcheck = false;
 		idchk = -1;
-		//imgchk = -1;
 		isUserFnIndx = -1;
 		isUserFn = false;
 
@@ -271,6 +273,7 @@ form of electronic retrieval system.
 				// rdbchk = type.indexOf("radio");
 				idchk = type.indexOf("id");
 				imgchk = type.indexOf("image");
+				vidchk = type.indexOf("video");
 				formchk = type.indexOf("form");
 
 				//$("#debug").append("idchk :" + idchk + "\n");
@@ -284,6 +287,12 @@ form of electronic retrieval system.
 					imgindx = m;
 					imgconfig = type;
 				}
+				
+				if (vidchk > -1) {
+					vidindx = m;
+					vidconfig = type;
+				}
+
 
 				if (chkindchk > -1) {
 					chkbxindx = m;
@@ -432,6 +441,7 @@ form of electronic retrieval system.
 						rdbchk = type.indexOf("radio");
 						hdchk = type.indexOf("covered");
 						imgchk = type.indexOf("image");
+						vidchk = type.indexOf("image");
 						formchk = type.indexOf("form");
 
 						// Ignore checkboxes or radio buttons
@@ -475,6 +485,7 @@ form of electronic retrieval system.
 						hdchk = type.indexOf("covered");
 						imgchk = type.indexOf("image");
 						formchk = type.indexOf("form");
+						vidchk = type.indexOf("image");
 
 						// use different idindx here
 						if (idchk > -1) {
@@ -486,6 +497,11 @@ form of electronic retrieval system.
 						if (imgchk > -1) {
 							imgindx = m;
 							imgconfig = type;
+						}
+
+						if (vidchk > -1) {
+							vidindx = m;
+							vidconfig = type;
 						}
 
 						
